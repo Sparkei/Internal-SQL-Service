@@ -21,9 +21,7 @@ Method OnProcessInput() As %Status
 {
    
     Set sc = $$$OK
-    $$$TRACE("1")
     set result=##class(EnsLib.SQL.Snapshot).%New()
-    $$$TRACE("2")
     set SelectModeNumber=$PIECE(..SelectMode,":",2)
     set SQLStatement = ##class(%SQL.Statement).%New(SelectModeNumber,,..Dialect)
     set tSQL=..SQLQuery
@@ -31,7 +29,6 @@ Method OnProcessInput() As %Status
     set rset = SQLStatement.%Execute()
     $$$TRACE(rset)
     set tSC=result.ImportFromResultSet(rset)
-    //set result.Resultset=rset
     set tSC=..SendRequestAsync(..ForwardComponentName,result,0)  Quit:$$$ISERR(tSC)
     Return sc
 }
