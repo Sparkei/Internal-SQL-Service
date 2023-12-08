@@ -15,4 +15,4 @@ Set up system default setting
 Set forward component name
 
 ## Working with the result set
-See code example GETDATATABLE.CLS in example class
+See code example InternalSQLSampleOperation.cls in example class for help in using - formats result set in HTML table
